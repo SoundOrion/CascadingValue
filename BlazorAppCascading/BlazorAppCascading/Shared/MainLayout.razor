@@ -1,0 +1,29 @@
+﻿@inherits LayoutComponentBase
+@using BlazorAppCascading.Cascade
+
+<PageTitle>BlazorAppCascading</PageTitle>
+
+https://learn.microsoft.com/ja-jp/aspnet/core/blazor/components/cascading-values-and-parameters?view=aspnetcore-7.0
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        </div>
+
+        <CascadingValue Value="guestMessage" Name="guest">
+            <article class="content px-4">
+                @Body
+            </article>
+        </CascadingValue>
+
+    </main>
+</div>
+
+@code {
+    private Message guestMessage = new Message("ZZZZZZZZZZZ");
+}

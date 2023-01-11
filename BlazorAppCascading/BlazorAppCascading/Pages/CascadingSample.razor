@@ -1,0 +1,22 @@
+﻿@page "/casc"
+@using BlazorAppCascading.Cascade
+
+<h3>Cascading Sample</h3>
+
+<button class="btn btn-primary" @onclick="GuestMessage">ゲストMessage</button>
+
+<br />
+
+<h4>@messageText</h4>
+
+@code {
+    [CascadingParameter(Name = "guest")]
+    protected Message guestMessage { get; set; }
+
+    private string messageText;
+
+    private void GuestMessage()
+    {
+        messageText = guestMessage.GetText();
+    }
+}
